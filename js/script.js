@@ -34,6 +34,7 @@ if (isMobile.any()) {
 const searchButton = document.querySelector('.master__search-subitem');
 const searchForm = document.querySelector('.master__form');
 const searchFields = document.querySelectorAll('.form__search-field');
+const emailField = document.querySelector('.loop__text-field');
 const searchFormParent = searchForm.parentElement;
 
 
@@ -45,6 +46,14 @@ searchFields.forEach(function (item, i, searchFields) {
 	item.addEventListener("blur", function (e) {
 		item.placeholder = itemPlaceholder;
 	});
+});
+
+let emailPlaceholder = emailField.placeholder;
+emailField.addEventListener("focus", function (e) {
+	emailField.placeholder = "";
+});
+emailField.addEventListener("blur", function (e) {
+	emailField.placeholder = emailPlaceholder;
 });
 
 searchButton.addEventListener("click", function (e) {
