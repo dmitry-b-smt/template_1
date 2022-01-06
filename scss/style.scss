@@ -332,7 +332,6 @@ body {
 
 .analog {
       position: relative;
-      // padding: 0 0 41.7% 0;
       height: 600px;
       margin: 0 0 47px 0;
 
@@ -357,22 +356,20 @@ body {
             }
       }
 
-      &__item > img {
-            position: absolute;
-            top: 25px;
-            left: 0;
-      }
-
       &__link {
             display: inline-block;
             font-size: 15px;
             line-height: calc(22.5 / 15 * 100%);
             color: #ffffff;
+            border-bottom: 1px solid #ffffff;
       }
-      &__link:hover {
+      &__link-container {
+            color: #ffffff;
+      }
+      &__link-container:hover {
             text-shadow: 0px 0px 5px #ffffff;
       }
-      &__link:active {
+      &__link-container:active {
             text-shadow: 0px 0px 10px #ffffff;
       }
 }
@@ -383,7 +380,6 @@ body {
 .products {
       &__menu {
             text-transform: capitalize;
-            // line-height: (27 / 17 * 100%);
             display: flex;
             justify-content: center;
             margin: 0 0 49px 0;
@@ -539,14 +535,14 @@ body {
       }
 
       &__link-container {
-            display: flex;
             position: relative;
+            color: #1a1a1a;
       }
-
-      &__column-text &__link-container > img {
-            position: absolute;
-            top: 23px;
-            left: 3;
+      &__link-container:hover {
+            text-shadow: 0px 0px 1px #1a1a1a;
+      }
+      &__link-container:active {
+            text-shadow: 0px 0px 10px #1a1a1a;
       }
 
       &__message {
@@ -576,16 +572,11 @@ body {
       }
 
       &__link {
-            display: block;
+            display: inline-block;
             font-size: 14px;
             line-height: 150%;
             color: #1a1a1a;
-      }
-      &__link:hover {
-            text-shadow: 0px 0px 1px #1a1a1a;
-      }
-      &__link:active {
-            text-shadow: 0px 0px 10px #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
       }
 
       &__background {
@@ -631,13 +622,6 @@ body {
             padding: 10px;
       }
 
-      &__column &__link-container > img {
-            position: absolute;
-            top: 23px;
-            left: 3;
-            width: 110px;
-      }
-
       &__image {
             position: relative;
       }
@@ -648,22 +632,22 @@ body {
       }
 
       &__link-container {
-            display: flex;
             position: relative;
+            color: #1a1a1a;
+      }
+      &__link-container:hover {
+            text-shadow: 0px 0px 1px #1a1a1a;
+      }
+      &__link-container:active {
+            text-shadow: 0px 0px 10px #1a1a1a;
       }
 
       &__link {
-            display: block;
+            display: inline-block;
             font-size: 16px;
             line-height: 150%;
             color: #1a1a1a;
-      }
-
-      &__link:hover {
-            text-shadow: 0px 0px 1px #1a1a1a;
-      }
-      &__link:active {
-            text-shadow: 0px 0px 10px #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
       }
 }
 
@@ -678,29 +662,22 @@ body {
       }
 
       &__link-container {
-            display: flex;
             position: relative;
+            color: #1a1a1a;
       }
-
-      &__link-container > img {
-            position: absolute;
-            top: 23px;
-            left: 0px;
-            width: 105px;
+      &__link-container:hover {
+            text-shadow: 0px 0px 1px #1a1a1a;
+      }
+      &__link-container:active {
+            text-shadow: 0px 0px 10px #1a1a1a;
       }
 
       &__link {
-            display: block;
+            display: inline-block;
             font-size: 16px;
             line-height: 150%;
             color: #1a1a1a;
-      }
-
-      &__link:hover {
-            text-shadow: 0px 0px 1px #1a1a1a;
-      }
-      &__link:active {
-            text-shadow: 0px 0px 10px #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
       }
 }
 
@@ -747,17 +724,17 @@ body {
             max-width: 107px;
             text-align: center;
       }
+      &__item:hover {
+            text-shadow: 0px 0px 5px #ffffff;
+      }
+      &__item:active {
+            text-shadow: 0px 0px 10px #ffffff;
+      }
 
       &__link {
             text-align: center;
             color: #ffffff;
-      }
-
-      &__container &__item > img {
-            position: absolute;
-            top: 28px;
-            left: 0px;
-            width: 107px;
+            border-bottom: 1px solid #ffffff;
       }
 }
 .loop {
@@ -821,6 +798,23 @@ body {
             display: flex;
       }
 
+      @media (max-width: 750px) {
+            &__container {
+                  flex-direction: column;
+            }
+            &__container > &__column:nth-child(3) {
+                  display: none;
+            }
+            &__column {
+                  min-width: 33.333%;
+                  padding: 84px 0px 104px 0px;
+            }
+            &__menu {
+                  display: flex;
+                  justify-content: center;
+                  flex-wrap: wrap;
+            }
+      }
       &__column {
             min-width: 25%;
             padding: 84px 0px 104px 0px;
@@ -863,6 +857,36 @@ body {
       &__menu > li:not(:last-child) {
             margin: 0px 0px 14px 0px;
       }
+      @media (max-width: 750px) {
+            &__menu > li:not(:last-child) {
+                  margin: 0px 20px 14px 0px;
+            }
+            &__column {
+                  min-width: 25%;
+                  padding: 15px 0px;
+            }
+            &__column p {
+                  text-align: center;
+            }
+            &__column > div:first-child {
+                  display: flex;
+                  justify-content: center;
+                  flex-wrap: wrap-reverse;
+            }
+            &__social {
+                  display: inline-block;
+                  margin: 5px 10px 5px 10px;
+                  width: 15px;
+            }
+            &__logo-link {
+                  display: flex;
+                  justify-content: center;
+                  margin: 0 0 15px 0;
+            }
+            &__column p:nth-child(2) {
+                  margin: 0px 0px 15px 0px;
+            }
+      }
 
       &__menu-item {
             display: inline-block;
@@ -872,17 +896,6 @@ body {
       &__menu-item:hover {
             text-decoration: underline;
       }
-      @media (max-width: 440px) {
-            &__social {
-                  display: inline-block;
-                  margin: 5px;
-                  width: 15px;
-            }
-      }
-}
-.container {
-}
-.link {
 }
 
 // -----------------ADDONS-----------------------
