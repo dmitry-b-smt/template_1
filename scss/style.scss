@@ -333,7 +333,6 @@ body {
 .analog {
       position: relative;
       height: 600px;
-      margin: 0 0 47px 0;
 
       &__items {
             display: flex;
@@ -378,11 +377,12 @@ body {
 }
 
 .products {
+      padding: 47px 0px 0px 0px;
       &__menu {
             text-transform: capitalize;
             display: flex;
             justify-content: center;
-            margin: 0 0 49px 0;
+            margin: 0 0 35px 0;
       }
 
       &__menu-list {
@@ -436,7 +436,12 @@ body {
             justify-items: auto;
             column-gap: 20px;
             grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-            margin-bottom: 114px;
+            margin-bottom: 20px;
+      }
+      @media (min-width: 750px) {
+            &__items.selected {
+                  margin-bottom: 115px;
+            }
       }
 
       &__items-few {
@@ -488,18 +493,31 @@ body {
       &__button {
             text-transform: capitalize;
             display: block;
-            margin: auto auto 172px auto;
+            margin: auto auto 55px auto;
             width: 302px;
             font-size: 20px;
             line-height: 56px;
             padding: 10px 25px 10px 25px;
             text-align: center;
       }
+      @media (min-width: 750px) {
+            &__button {
+                  margin: auto auto 172px auto;
+            }
+            &__items {
+                  margin-bottom: 114px;
+            }
+      }
 }
 
 .discount {
       background-color: #ced3ca;
-      padding: 127px 0px 127px 0px;
+      padding: 63px 0px;
+}
+@media (min-width: 750px) {
+      .discount {
+            padding: 127px 0px;
+      }
 }
 
 .discount {
@@ -546,6 +564,8 @@ body {
       }
 
       &__message {
+            display: flex;
+            flex-direction: column;
             font-size: 17px;
             line-height: 150%;
             max-width: 208px;
@@ -556,11 +576,17 @@ body {
             font-size: 15px;
             line-height: 140%;
       }
+      &__message-item {
+            text-align: center;
+      }
 
       @media (min-width: 460px) {
             &__message {
                   font-size: 19px;
                   margin: 0 0 20px 0;
+            }
+            &__message-item {
+                  text-align: start;
             }
       }
 
@@ -591,7 +617,7 @@ body {
 
 .mission {
       background-color: #f8f6f2;
-      padding: 0 0 115px 0;
+      padding: 0 0 25px 0;
 
       &__header {
             text-align: center;
@@ -600,19 +626,34 @@ body {
             color: #1a1a1a;
             max-width: 630px;
             margin: auto;
-            padding: 113px 0 113px 0;
+            padding: 55px 0px;
+      }
+      @media (min-width: 750px) {
+            &__header {
+                  padding: 113px 0px;
+            }
       }
 
       &__wear {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin: -10px 0 50px -10px;
+            margin: -10px 0 10px -10px;
+      }
+      @media (min-width: 750px) {
+            &__wear {
+                  margin: -10px 0 50px -10px;
+            }
       }
 
       &__objects {
             display: flex;
             flex-direction: column;
+      }
+}
+@media (min-width: 750px) {
+      .mission {
+            padding: 0 0 115px 0;
       }
 }
 
@@ -738,7 +779,7 @@ body {
       }
 }
 .loop {
-      height: 443px;
+      height: 373px;
       background-color: #ced3ca;
       display: flex;
       justify-content: center;
@@ -785,6 +826,11 @@ body {
             border: 1px solid #242424;
             padding: 13px 20px;
             border-left: none;
+      }
+}
+@media (min-width: 750px) {
+      .loop {
+            height: 443px;
       }
 }
 
@@ -872,6 +918,10 @@ body {
                   display: flex;
                   justify-content: center;
                   flex-wrap: wrap-reverse;
+            }
+            &__social-container {
+                  display: flex;
+                  justify-content: center;
             }
             &__social {
                   display: inline-block;
